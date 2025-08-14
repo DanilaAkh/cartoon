@@ -16,7 +16,7 @@ class CartoonNet():
         print("Seting parameters...")
         n_fc_in = self.model.fc.in_features
         self.model.fc = torch.nn.Linear(n_fc_in, n_classes)
-        self.model.load_state_dict(torch.load('app/ckpt/best_model.pt'), map_location=torch.device('cpu'))
+        self.model.load_state_dict(torch.load('app/ckpt/best_model.pt', map_location=torch.device('cpu')))
 
         print("Seting on evaluation mode...")
         self.model.eval()
