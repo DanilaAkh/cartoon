@@ -1,0 +1,35 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartoon Finder</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cartoon Series Finder</h1>
+            <p>Upload an image to identify the cartoon!</p>
+        </header>
+        <main>
+            <div class="upload-area" id="upload-area">
+                <input type="file" id="image-upload" accept="image/*" hidden>
+                <label for="image-upload" class="upload-label">
+                    <img src="../static/placeholder.png" alt="Upload placeholder" id="placeholder-image">
+                </label>
+            </div>
+            <div class="preview-area" id="preview-area" style="display: none;">
+                <img src="#" alt="Image preview" id="image-preview">
+            </div>
+            <div class="result-area" id="result-area">
+                <p id="result-text">The result will appear here.</p>
+            </div>
+            <button id="reset-button" class="reset-btn" style="display: none;">Сбросить</button>
+        </main>
+    </div>
+    <script src="../static/script.js"></script>
+</body>
+</html>
