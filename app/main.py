@@ -7,7 +7,7 @@ import uvicorn
 if __name__ == '__main__':
     app = FastAPI()
     
-    app.mount('/static', StaticFiles(directory='app/static'), 'static')
+    app.mount('/static', StaticFiles(directory='static'), 'static')
     app.include_router(router_api)
 
 
