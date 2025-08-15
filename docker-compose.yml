@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  app:
+    build: ./app
+    container_name: fastapi_app
+    restart: always
+    environment:
+      - APP_ENV=production
+    networks:
+      - app-network
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/ssl:/etc/nginx/ssl  # Для SSL сертификатов
+      - ./logs/nginx:/var/log/nginx # Логи Nginx
+    depends_on:
+      - app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
