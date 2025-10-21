@@ -24,7 +24,7 @@ class CartoonNet():
     def predict(self, image):
         img = prepare_img(image)
         proba = predict_one_sample(self.model, img, device=DEVICE)
-        names_classes = ['Familyguy', 'Gumball', 'Tsubasa', 'adventure_time', 'catdog', 'pokemon', 'smurfs', 'southpark', 'spongebob', 'tom_and_jerry']
+        names_classes = ['Familyguy', 'Gumball', 'Tsubasa', 'adventure_time', 'catdog', 'lion_king', 'pokemon', 'smurfs', 'southpark', 'spongebob', 'tom_and_jerry']
         #predicted_proba = np.max(proba) * 100
 
         predicted_class_idx = torch.argmax(proba).item()

@@ -24,7 +24,7 @@ def predict_one_sample(model, inputs, device):
         
         inputs = inputs.to(device)
         model.to(device)
-        logit = model(inputs).cpu() # тут происходит ошибка
+        logit = model(inputs).cpu()
 
         probs = torch.nn.functional.softmax(logit, dim=-1)
     return probs
