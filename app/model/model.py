@@ -7,7 +7,7 @@ import numpy as np
 DEVICE = 'cpu' # 'cuda' if torch.cuda.is_available() else 
 
 class CartoonNet():
-    def __init__(self, n_classes=10):
+    def __init__(self, n_classes=11):
         print('loading model')
         
         # prepare and load model
